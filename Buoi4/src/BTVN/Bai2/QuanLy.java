@@ -31,6 +31,7 @@ public class QuanLy {
     public void xuat(){
         System.out.println("Ma QL: " + maQl);
         System.out.println("Ten QL: "+ tenQL);
+        System.out.println("-----------------");
     }
     public void nhap(){
         Scanner scanner = new Scanner(System.in);

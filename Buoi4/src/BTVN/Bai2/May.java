@@ -53,5 +53,6 @@ public class May {
         System.out.println("Ma may: " + maMay);
         System.out.println("Kieu may: " + kieuMay);
         System.out.println("Tinh trang: "+ tinhTrang);
+        System.out.println("--------------------------");
     }
 }

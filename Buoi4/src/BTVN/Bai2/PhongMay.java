@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class PhongMay {
     private String maPhong;
     private String tenPhong;
-    private QuanLy x;
+    private QuanLy x = new QuanLy();
     private int n;
     private ArrayList<May> y = new ArrayList<>();
 
@@ -68,7 +68,7 @@ public class PhongMay {
         System.out.println("Nhap ten phong: ");
         tenPhong = scanner.nextLine();
         x.nhap();
-        System.out.println("Nhap so may tinh: ");
+        System.out.println("Nhap so luong may tinh: ");
         n = scanner.nextInt();
         scanner.nextLine();
         for (int i = 0; i < n; i++) {
@@ -77,18 +77,38 @@ public class PhongMay {
             y.add(mayMoi);
         }
     }
+    public void xuat(){
+        System.out.println("Ma phong: " + maPhong);
+        System.out.println("Ten phong: " + tenPhong);
+        x.xuat();
+        for (May may: y
+             ) {
+            may.xuat();
+        }
+    }
+
     public void timKiem_tinhTrang(String tinhTrang){
+        boolean check = false;
         for(May may : y){
             if(may.getTinhTrang().equals(tinhTrang)){
                 may.xuat();
+                check = true;
             }
+        }
+        if (!check){
+            System.out.println("Khong tim thay!");
         }
     }
     public void timKiem_maMay(int maMay){
+        boolean check = false;
         for(May may : y){
             if(may.getMaMay() == maMay){
                 may.xuat();
+                check = true;
             }
+        }
+        if(!check){
+            System.out.println("Khong tim thay!");
         }
     }
 }
