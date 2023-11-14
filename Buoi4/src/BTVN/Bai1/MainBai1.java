@@ -29,7 +29,16 @@ public class MainBai1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<SACH> danhSachSach = new ArrayList<>();
-
+        TacGia tacGia1 = new TacGia("Tác giả 1", 1980);
+        TacGia tacGia2 = new TacGia("Tác giả 2", 1990);
+        TacGia tacGia3 = new TacGia("Tác giả 3", 1975);
+        TacGia tacGia4 = new TacGia("Tác giả 4", 1985);
+        TacGia tacGia5 = new TacGia("Tác giả 5", 1995);
+        danhSachSach.add(new SACH(1,"Sach 1",2022,"ki", tacGia1));
+        danhSachSach.add(new SACH(2,"Sach 2",1999,"tieuthuyet", tacGia2));
+        danhSachSach.add(new SACH(3,"Sach 3",1999,"tieuthuyet", tacGia3));
+        danhSachSach.add(new SACH(4,"Sach 4",1999,"tieuthuyet", tacGia4));
+        danhSachSach.add(new SACH(5,"Sach 5",1999,"tieuthuyet", tacGia5));
         while (true) {
             System.out.println("\nMenu:");
             System.out.println("1. Nhap thong tin sach");
@@ -53,8 +62,10 @@ public class MainBai1 {
                     for (SACH sach : danhSachSach) {
                         sach.output();
                     }
+                    break;
                 case 3:
                     System.out.println("Nhap ten sach can tim: ");
+                    sc.nextLine();
                     String tenCanTim = sc.nextLine();
                     timKiemSach(danhSachSach, tenCanTim);
                     break;

@@ -40,7 +40,8 @@ public class TacGia {
         scanner.nextLine(); // Đọc ký tự new line sau khi nhập giá trị số
     }
     public void output() {
-        System.out.print("Tac gia: " + tenTacGia);
-        System.out.print("Sinh nam: " + namSinh);
+        System.out.println("Tac gia: " + tenTacGia);
+        System.out.println("Sinh nam: " + namSinh);
+        System.out.println("-----------------------------");
     }
 }

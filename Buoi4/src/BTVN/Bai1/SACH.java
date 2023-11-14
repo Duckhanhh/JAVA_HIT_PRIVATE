@@ -8,7 +8,7 @@ public class SACH {
     private String tenSach;
     private int namXuatBan;
     private String theLoai;
-    private TacGia x;
+    private TacGia x = new TacGia();
 
     public SACH() {
     }
