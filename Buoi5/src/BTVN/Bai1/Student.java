@@ -11,7 +11,7 @@ public class Student extends Person{
     public Student() {
     }
 
-    public Student(String name, int age, Address address, int id, String nameClass, float gpa) {
+    public Student(String name, int age, Address address,int id, String nameClass, float gpa) {
         super(name, age, address);
         this.id = id;
         this.nameClass = nameClass;
@@ -45,16 +45,17 @@ public class Student extends Person{
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter student ID: ");
         id = scanner.nextInt();
-        System.out.print("Enter student name: ");
-        name = scanner.nextLine();
-        System.out.print("Enter student GPA: ");
+        scanner.nextLine();
+        System.out.print("Enter the student's class name: ");
+        nameClass = scanner.nextLine();
+        System.out.print("Enter the student's GPA: ");
         gpa = scanner.nextFloat();
         super.input();
     }
     public void output(){
-        System.out.println("ID: " + id);
-        System.out.println("Name: " + name);
-        System.out.println("GPA: " + gpa);
+        System.out.println("ID: " + this.id);
+        System.out.println("Class: " + this.nameClass);
+        System.out.println("GPA: " + this.gpa);
         super.output();
     }
     public boolean checkFall(){

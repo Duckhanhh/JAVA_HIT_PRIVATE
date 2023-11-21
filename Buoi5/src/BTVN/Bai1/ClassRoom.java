@@ -5,6 +5,12 @@ import java.util.*;
 public class ClassRoom {
     private static ArrayList<Student> classroom = new ArrayList<>();
 
+    public static void fakeData() {
+        classroom.add(new Student("ABC", 19, new Address("sdf", "dggdf", "sdfsd"), 1, "KHMT", 3.33F));
+        classroom.add(new Student("DEF", 19, new Address("Caads", "fdfs", "sdfwe"), 2, "KHMT", 3.22F));
+        classroom.add(new Student("XYZ", 20, new Address("qwe", "zcv", "wefef"), 3, "IT", 1.0F));
+    }
+
     public static void sortByGpa() {
         for (int i = 0; i < classroom.size() - 1; i++) {
             for (int j = i; j < classroom.size(); j++) {
@@ -15,19 +21,28 @@ public class ClassRoom {
                 }
             }
         }
+        System.out.println("successful!!!");
     }
 
     public static void inputList() {
-        for (Student newStudent : classroom) {
-            newStudent = new Student();
-            newStudent.input();
-            classroom.add(newStudent);
-        }
+        do {
+            Student student = new Student();
+            student.input();
+            classroom.add(student);
+            if (student.getId() == 555) {
+                break;
+            }
+
+        } while (true);
     }
 
     public static void outputList() {
-        for (Student student : classroom) {
-            student.output();
+        if (classroom.isEmpty()) {
+            System.out.println("Not found");
+        } else {
+            for (Student student : classroom) {
+                student.output();
+            }
         }
     }
 
@@ -36,9 +51,9 @@ public class ClassRoom {
         System.out.print("Enter student ID to delete: ");
         int idToDelete = scanner.nextInt();
         boolean found = false;
-        for (int i = 0; i < classroom.size(); i++) {
-            if (classroom.get(i).getId() == idToDelete) {
-                classroom.remove(i);
+        for (Student student : classroom) {
+            if (student.getId() == idToDelete) {
+                classroom.remove(student);
                 found = true;
                 break;
             }
@@ -62,6 +77,7 @@ public class ClassRoom {
 
             switch (choice) {
                 case 1:
+                    //fakeData();
                     inputList();
                     break;
                 case 2:
