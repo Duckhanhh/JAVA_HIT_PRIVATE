@@ -1,7 +1,7 @@
 package BTVN.Bai2;
 
 public class PartTimeEmployee extends Employee{
-    private int workingHour;
+    private final int workingHour;
 
     public PartTimeEmployee(String name, int paymentPerHour, int workingHour) {
         super(name, paymentPerHour);

@@ -3,7 +3,7 @@ package BTVN.Bai2;
 import java.util.*;
 
 public class EmployeeManagementSystem {
-    private List<Employee> employees;
+    private final List<Employee> employees;
 
     public EmployeeManagementSystem() {
         employees = new ArrayList<>();
@@ -26,7 +26,7 @@ public class EmployeeManagementSystem {
     }
 
     public void sortEmployeesBySalaryDescending() {
-        Collections.sort(employees, Comparator.comparingDouble(Employee::calculateSalary).reversed());
+        employees.sort(Comparator.comparingDouble(Employee::calculateSalary).reversed());
     }
 
     public Employee findEmployeeWithMostWorkingHours() {
